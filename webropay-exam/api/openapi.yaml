@@ -21,6 +21,26 @@ tags:
   description: Access and editing of contracts
 paths:
   /contracts:
+    options:
+      summary: CORS support
+      description: |
+        Enable CORS by returning correct headers
+      tags:
+      - CORS
+      responses:
+        200:
+          description: Successful operation
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
+          content: {}
     get:
       tags:
       - contract
@@ -28,7 +48,17 @@ paths:
       operationId: getContracts
       responses:
         "200":
-          description: successful operation
+          description: Successful operation
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content:
             application/xml:
               schema:
@@ -43,9 +73,29 @@ paths:
                   $ref: '#/components/schemas/Contract'
         "400":
           description: Wrong request
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content: {}
         "405":
           description: Validation exception
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content: {}
       x-swagger-router-controller: Contract
   /contract/{contractId}:

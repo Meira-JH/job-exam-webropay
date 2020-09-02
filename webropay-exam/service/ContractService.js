@@ -20,12 +20,12 @@ exports.addContract = function (body) {
   return new Promise(function (resolve, reject) {
     db.from("contracts")
       .insert({
-        description: body.description, 
-        status: body.status 
+        description: body.description,
+        status: body.status,
       })
-      .then(function(){
-        resolve()
-      })
+      .then(function () {
+        resolve();
+      });
   });
 };
 
@@ -39,14 +39,14 @@ exports.addContract = function (body) {
 exports.editContract = function (body, contractId) {
   return new Promise(function (resolve, reject) {
     db.from("contracts")
-      .where({id: contractId})
-      .update({ 
-        description: body.description, 
-        status: body.status 
+      .where({ id: contractId })
+      .update({
+        description: body.description,
+        status: body.status,
       })
-      .then(function(){
-        resolve()
-      })
+      .then(function () {
+        resolve();
+      });
   });
 };
 
@@ -55,12 +55,9 @@ exports.editContract = function (body, contractId) {
  *
  * returns List
  **/
-exports.getContracts = function () {
-  return new Promise(function (resolve, reject) {
-    db.select("*")
-      .from("contracts")
-      .then(function (data) {
-        resolve(data);
-      });
-  });
+exports.getContracts = async function () {
+  return await db
+    .select("*")
+    .from("contracts")
+    .orderBy('id')
 };
