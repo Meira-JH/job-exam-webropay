@@ -17,16 +17,12 @@ const db = require("../database");
  * returns Contract
  **/
 exports.addContract = function (body) {
-  return new Promise(function (resolve, reject) {
-    db.from("contracts")
+  return db
       .insert({
         description: body.description,
         status: body.status,
       })
-      .then(function () {
-        resolve();
-      });
-  });
+      .into("contracts")
 };
 
 /**

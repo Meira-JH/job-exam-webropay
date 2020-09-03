@@ -21,33 +21,13 @@ tags:
   description: Access and editing of contracts
 paths:
   /contracts:
-    options:
-      summary: CORS support
-      description: |
-        Enable CORS by returning correct headers
-      tags:
-      - CORS
-      responses:
-        200:
-          description: Successful operation
-          headers:
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-            Access-Control-Allow-Methods:
-              schema:
-                type: string
-            Access-Control-Allow-Headers:
-              schema:
-                type: string
-          content: {}
     get:
       tags:
       - contract
       summary: Get a list of all contracts
       operationId: getContracts
       responses:
-        "200":
+        200:
           description: Successful operation
           headers:
             Access-Control-Allow-Origin:
@@ -71,31 +51,12 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Contract'
-        "400":
+        400:
           description: Wrong request
-          headers:
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-            Access-Control-Allow-Methods:
-              schema:
-                type: string
-            Access-Control-Allow-Headers:
-              schema:
-                type: string
+
           content: {}
-        "405":
+        405:
           description: Validation exception
-          headers:
-            Access-Control-Allow-Origin:
-              schema:
-                type: string
-            Access-Control-Allow-Methods:
-              schema:
-                type: string
-            Access-Control-Allow-Headers:
-              schema:
-                type: string
           content: {}
       x-swagger-router-controller: Contract
   /contract/{contractId}:
@@ -121,14 +82,44 @@ paths:
               $ref: '#/components/schemas/Contract'
         required: true
       responses:
-        "200":
+        200:
           description: Successfull operation
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content: {}
-        "400":
+        400:
           description: Invalid contract id supplied
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content: {}
-        "404":
+        404:
           description: Contract not found
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content: {}
       x-swagger-router-controller: Contract
   /contract:
@@ -145,11 +136,31 @@ paths:
               $ref: '#/components/schemas/Contract'
         required: true
       responses:
-        "200":
-          description: successful operation
+        200:
+          description: Successful operation
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content: {}
-        "400":
+        400:
           description: Invalid Order
+          headers:
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+            Access-Control-Allow-Methods:
+              schema:
+                type: string
+            Access-Control-Allow-Headers:
+              schema:
+                type: string
           content: {}
       x-swagger-router-controller: Contract
 components:

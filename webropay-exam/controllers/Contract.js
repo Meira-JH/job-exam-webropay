@@ -3,8 +3,8 @@
 var utils = require('../utils/writer.js');
 var Contract = require('../service/ContractService');
 
-module.exports.addContract = function addContract (req, res, next, body, contractId) {
-  Contract.addContract(body, contractId)
+module.exports.addContract = function addContract (req, res, next, body) {
+  Contract.addContract(body)
     .then(function (response) {
       utils.writeJson(res, response);
     })
