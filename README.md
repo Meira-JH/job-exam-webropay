@@ -8,7 +8,7 @@ This is the back-end page of a full-stack activity proposed by WebroPay as part 
 <p align="center">
 <img width="40px" src="https://cdn.iconscout.com/icon/free/png-256/nodejs-2-226035.png"/>
 <img width="35px" src="http://3con14.biz/code/_data/js/intro/js-logo.png"/>
-<img width="35px" src="https://seeklogo.com/vector-logo/338589/swagger"/>
+<img width="35px" src="https://seeklogo.com/images/S/swagger-logo-A49F73BAF4-seeklogo.com.png"/>
 <img width="35px" src="https://github.com/MarioTerron/logo-images/blob/master/logos/npm.png"/>
 </p>
 
