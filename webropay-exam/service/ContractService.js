@@ -2,13 +2,6 @@
 
 const db = require("../database");
 
-// async function destroyConnection() {
-//   if(connection){
-//       await connection.destroy();
-//       connection = null;
-//   }
-// }
-
 /**
  * Adds a contract to the Webropay repository
  *
@@ -16,8 +9,8 @@ const db = require("../database");
  * contractId String ID of the contract to be added
  * returns Contract
  **/
-exports.addContract = function (body) {
-  return db
+exports.addContract = async function (body) {
+  return await db
       .insert({
         description: body.description,
         status: body.status,
@@ -32,9 +25,8 @@ exports.addContract = function (body) {
  * contractId String ID of the contract to be edited
  * no response value expected for this operation
  **/
-exports.editContract = function (body, contractId) {
-  return new Promise(function (resolve, reject) {
-    db.from("contracts")
+exports.editContract = async function (body, contractId) {
+  return await db.from("contracts")
       .where({ id: contractId })
       .update({
         description: body.description,
@@ -43,7 +35,6 @@ exports.editContract = function (body, contractId) {
       .then(function () {
         resolve();
       });
-  });
 };
 
 /**

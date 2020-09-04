@@ -15,7 +15,11 @@ var options = {
 var expressAppConfig = oas3Tools.expressAppConfig(path.join(__dirname, 'api/openapi.yaml'), options);
 expressAppConfig.addValidator();
 var app = expressAppConfig.getApp();
-app.use(cors())
+var corsOptions = {
+    origin: "http://localhost:3030",
+    optionsSuccessStatus: 200
+  }
+app.use(cors(corsOptions))
 
 // Initialize the Swagger middleware
 http.createServer(app).listen(serverPort, function () {

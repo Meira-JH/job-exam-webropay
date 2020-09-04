@@ -37,7 +37,7 @@ var writeJson = (exports.writeJson = function (response, arg1, arg2) {
     payload = JSON.stringify(payload, null, 2);
   }
   response.writeHead(code, {
-    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Origin": "http://localhost:3030",
     "Access-Control-Allow-Methods": "*",
     "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
     "Content-Type": "application/json",
