@@ -1,4 +1,4 @@
-# Webro Pay - backend :credit_card: :page_facing_up:
+# Webro Pay - FULL STACK :credit_card: :page_facing_up:
 Development for a fullstack job examination at WeBropay 
 
 This is the back-end page of a full-stack activity proposed by WebroPay as part of their selection exam. It is a simple application, using JavaScript as language, Swagger(openAPI: 3.0) as framework, Node.js as environment and MVC structure.
